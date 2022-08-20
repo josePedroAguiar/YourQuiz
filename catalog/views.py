@@ -34,7 +34,7 @@ def mallu(request):
             f.save(commit=False).user = request.user
             code= f.save(commit=False)
             codigo=code.code.lower()
-            if(codigo=="blue" or codigo=="azul"):
+            if(codigo=="blue"):
                 code.save()
                 return redirect('blue')
         except ValueError:
@@ -44,7 +44,7 @@ def mallu(request):
 
 def blue(request):
     if request.method == 'GET':
-        return render(request,'next.html',{'clue':"Bem já que chegaste aqui ,fiz uma playlist para ti espero que gostes e que ajude a descobrir a resolver a proxima charada e a recuperar o folgo,pois a nitidamente a menina a esta altura já deve estar sem ar xD.Por isso,a charada é sobre o ar:\nQual ar é o mais caro?","link": "https://open.spotify.com/playlist/1vMiE1aERAZCL5nenuCMFg?si=9d40c0d2e1894ff1&pt=450f99639e97adab17dd1dc7312585b2","clue1":'"But I crumble completely when you cry"🎵','form': form()})
+        return render(request,'next.html',{'clue':"Bem já que chegaste aqui ,fiz uma playlist para ti espero que gostes e que ajude a descobrir a resolver a proxima charada e a recuperar o folgo,pois a nitidamente a menina a esta altura já deve estar sem ar xD.Por isso,a charada é sobre o ar:\nQual ar é o mais caro?","link": "https://open.spotify.com/playlist/1vMiE1aERAZCL5nenuCMFg?si=9d40c0d2e1894ff1&pt=450f99639e97adab17dd1dc7312585b2","clue1":'"But I crumble completely when you cry"','form': form()})
     else:
         try:
             f=form(request.POST)
@@ -56,8 +56,8 @@ def blue(request):
                 return redirect('_505_')
 
         except ValueError:
-            return render(request,'next.html',{'clue':"Bem já que chegaste aqui ,fiz uma playlist para ti espero que gostes e que ajude a descobrir a resolver a proxima charada e a recuperar o folgo,pois a nitidamente a menina a esta altura já deve estar sem ar xD.Por isso,a charada é sobre o ar:\nQual ar é o mais caro?","clue1":'"But I crumble completely when you cry"🎵',"link": "https://open.spotify.com/playlist/1vMiE1aERAZCL5nenuCMFg?si=9d40c0d2e1894ff1&pt=450f99639e97adab17dd1dc7312585b2",'form': form()})
-    return  render(request,'next.html',{'clue':"Bem já que chegaste aqui ,fiz uma playlist para ti espero que gostes e que ajude a descobrir a resolver a proxima charada e a recuperar o folgo,pois a nitidamente a menina a esta altura já deve estar sem ar xD.Por isso,a charada é sobre o ar:\nQual ar é o mais caro?","clue1":'"But I crumble completely when you cry"🎵',"link": "https://open.spotify.com/playlist/1vMiE1aERAZCL5nenuCMFg?si=9d40c0d2e1894ff1&pt=450f99639e97adab17dd1dc7312585b2",'form': form()})
+            return render(request,'next.html',{'clue':"Bem já que chegaste aqui ,fiz uma playlist para ti espero que gostes e que ajude a descobrir a resolver a proxima charada e a recuperar o folgo,pois a nitidamente a menina a esta altura já deve estar sem ar xD.Por isso,a charada é sobre o ar:\nQual ar é o mais caro?","clue1":'"But I crumble completely when you cry"',"link": "https://open.spotify.com/playlist/1vMiE1aERAZCL5nenuCMFg?si=9d40c0d2e1894ff1&pt=450f99639e97adab17dd1dc7312585b2",'form': form()})
+    return  render(request,'next.html',{'clue':"Bem já que chegaste aqui ,fiz uma playlist para ti espero que gostes e que ajude a descobrir a resolver a proxima charada e a recuperar o folgo,pois a nitidamente a menina a esta altura já deve estar sem ar xD.Por isso,a charada é sobre o ar:\nQual ar é o mais caro?","clue1":'"But I crumble completely when you cry"',"link": "https://open.spotify.com/playlist/1vMiE1aERAZCL5nenuCMFg?si=9d40c0d2e1894ff1&pt=450f99639e97adab17dd1dc7312585b2",'form': form()})
 
 def _505_(request):
     if request.method == 'GET':
