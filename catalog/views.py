@@ -12,7 +12,7 @@ def home(request):
     return render(request,'index.html' ,{'form': form()})
 def next(request):
     if request.method == 'GET':
-        return render(request,'next.html',{'clue':"Bem então vamos começar:\n As vezes algumas “mensagens” que nos fazem lembrar de algo/alguem podem vir de onde menos esperas:", "clue1":"Dica: Talvez de uma música vinda do Brasil",'form': form()})
+        return render(request,'next.html',{'clue':"Bem então vamos começar:\n As vezes algumas “mensagens” que nos fazem lembrar de algo/alguem podem vir de onde menos esperamos:", "clue1":"Dica: Talvez de uma música vinda do Brasil",'form': form()})
     else:
         try:
             f=form(request.POST)
@@ -22,8 +22,8 @@ def next(request):
                 code.save()
                 return redirect('mallu')
         except ValueError:
-            return render(request,'next.html',{'clue':"Bem então vamos começar:\n As vezes algumas “mensagens” que nos fazem lembrar de algo/alguem podem vir de onde menos esperas:","clue1":"Dica: Talvez de uma música vinda do Brasil",'form': form()})
-    return  render(request,'next.html',{'clue':"Bem então vamos começar:\n As vezes algumas “mensagens” que nos fazem lembrar de algo/alguem podem vir de onde menos esperas:","clue1":"Dica: Talvez de uma música vinda do Brasil",'form': form()})
+            return render(request,'next.html',{'clue':"Bem então vamos começar:\n As vezes algumas “mensagens” que nos fazem lembrar de algo/alguem podem vir de onde menos esperamos:","clue1":"Dica: Talvez de uma música vinda do Brasil",'form': form()})
+    return  render(request,'next.html',{'clue':"Bem então vamos começar:\n As vezes algumas “mensagens” que nos fazem lembrar de algo/alguem podem vir de onde menos esperamos:","clue1":"Dica: Talvez de uma música vinda do Brasil",'form': form()})
 
 def mallu(request):
     if request.method == 'GET':
@@ -44,7 +44,7 @@ def mallu(request):
 
 def blue(request):
     if request.method == 'GET':
-        return render(request,'next.html',{'clue':"Bem já que chegaste aqui ,fiz uma playlist para ti espero que gostes e que ajude a descobrir a resolver a proxima charada e a recuperar o folgo,pois a nitidamente a menina a esta altura já deve estar sem ar xD.Por isso,a charada é sobre o ar:\nQual ar é o mais caro?","link": "https://open.spotify.com/playlist/1vMiE1aERAZCL5nenuCMFg?si=9d40c0d2e1894ff1&pt=450f99639e97adab17dd1dc7312585b2","clue1":'"But I crumble completely when you cry"','form': form()})
+        return render(request,'next.html',{'clue':"Visto que já que chegaste aqui, decidi fazer uma playlist para ti :).Ouve um pouco dela enquanto estas a recuperar o folgo,pois já te esforçaste imenso, e enquanto tentas descobrir a solução para a charada.Pensei que era uma exelente ideia que a charada fosse sobre o ar,pois nitidamente deves estar com falta dele :)).A Charada é a seguinte:\nQual ar é o mais caro?","link": "https://open.spotify.com/playlist/1vMiE1aERAZCL5nenuCMFg?si=9d40c0d2e1894ff1&pt=450f99639e97adab17dd1dc7312585b2","clue1":'"But I crumble completely when you cry"','form': form()})
     else:
         try:
             f=form(request.POST)
