@@ -19,7 +19,9 @@ from catalog import views
 """path('next/<int:todo_pk>', views.next,name='next'),
     path('next/<int:todo_pk>', views.next2,name='next2'),"""
 urlpatterns = [
+
     path('', views.home,name='home'),
+    path('mallu/', views.mallu,name='mallu'),
     path('next/', views.next,name='next'),
     path('blue/', views.blue,name='blue'),
     path('505/', views._505_,name='_505_'),

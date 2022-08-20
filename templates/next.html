@@ -15,16 +15,59 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light w3-animate-bottom"  style="background-color: transparent; margin-top: 1%">
+    <a style="color: transparent">__</a>
+    <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+    <a href="{% url 'home' %}">
+    <lord-icon
+            src="https://cdn.lordicon.com/iifryyua.json"
+            trigger="hover"
+            colors="primary:#ffffff"
+            state="hover-1"
+            style="width:100px;height:50px;transform: rotate(180deg)" >
+    </lord-icon>
+    </a>
 
+
+    <ul class="navbar-nav ms-auto m-2 mb-lg-0">
+
+        <li class="nav-item  " style="display: inline-grid">
+            <h6 style="color: white; margin-top: -10px;padding-left:7px "> Dica </h6>
+            <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+            <lord-icon
+                    class="help"
+                    src="https://cdn.lordicon.com/keogyrep.json"
+                    trigger="loop"
+                    delay="6000"
+                    colors="primary:#ffffff"
+                    style="width:50px;height:50px; display:block">
+            </lord-icon>
+            <div class="clue"  >
+            <h2>{{ clue1 }}</h2>
+            </div>
+        </li>
+
+        <li class="nav-item ">
+            <a style="color: transparent">_____</a>
+        </li>
+
+
+
+
+    </ul>
+</nav>
 <!----- close button ----->
 <div class="close">
     <i class="fa fa-close"></i>
 </div>
-    <div class="input" style="margin-top: 20%">
+    <div class="input  w3-animate-bottom" style="margin-top: 17.5%" >
         <h2 class="w3-center">
             {{ clue }}
+
             <br>
             <br>
         </h2>
@@ -34,6 +77,14 @@
             <h3> {{ form.as_p }}</h3>
 
         </form>
+        {% if link  %}
+            <br>
+            <br>
+            <div  class="w3-center" style=" border: 3px solid #eee;margin-left:40%;margin-right: 40%;">
+
+            <a class="" href="{{ link }}" style="text-decoration: #f57a7a;text-decoration: none"><h3>Playlist in Spotify</h3></a>
+            </div>
+        {% endif %}
     </div>
 </div>
 </body>
@@ -124,6 +175,22 @@
         margin-right:25% ;
     }
 
+    .clue{
+       display: none;position: absolute;right: 10%;
+
+
+    }
+    .clue h2{
+        color: #eee;
+    }
+    .help:hover{
+
+    }
+
+
+    .help:hover + .clue {
+        display:block
+    }
 </style>
 <script>
     (function($){
